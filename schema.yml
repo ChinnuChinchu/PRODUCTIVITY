@@ -16,6 +16,30 @@ paths:
       responses:
         '200':
           description: No response body
+  /noteapp/api/my-groups/:
+    get:
+      operationId: api_my_groups_retrieve
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /noteapp/api/search/:
+    get:
+      operationId: api_search_retrieve
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
   /noteapp/groups/:
     get:
       operationId: groups_retrieve
@@ -39,6 +63,444 @@ paths:
       responses:
         '200':
           description: No response body
+  /noteapp/groups/{group_id}/add-note/:
+    get:
+      operationId: groups_add_note_retrieve
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: groups_add_note_create
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_add_note_update
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: groups_add_note_destroy
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /noteapp/groups/{group_id}/add-note/{note_id}/:
+    get:
+      operationId: groups_add_note_retrieve_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: note_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: groups_add_note_create_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: note_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_add_note_update_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: note_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: groups_add_note_destroy_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: note_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /noteapp/groups/{group_id}/tasks/:
+    get:
+      operationId: groups_tasks_retrieve
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: groups_tasks_create
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_tasks_update
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: groups_tasks_destroy
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /noteapp/groups/{group_id}/tasks/{task_id}/:
+    get:
+      operationId: groups_tasks_retrieve_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: task_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: groups_tasks_create_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: task_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_tasks_update_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: task_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: groups_tasks_destroy_2
+      parameters:
+      - in: path
+        name: group_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: task_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /noteapp/groups/{id}/:
+    get:
+      operationId: groups_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: groups_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /noteapp/groups/{id}/add-member/:
+    get:
+      operationId: groups_add_member_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_add_member_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /noteapp/groups/{id}/remove-member/:
+    get:
+      operationId: groups_remove_member_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: groups_remove_member_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - tokenAuth: []
+      responses:
+        '200':
+          description: No response body
   /noteapp/login/:
     post:
       operationId: login_create
@@ -49,29 +511,6 @@ paths:
       - basicAuth: []
       - tokenAuth: []
       - {}
-      responses:
-        '200':
-          description: No response body
-  /noteapp/memberships/:
-    get:
-      operationId: memberships_retrieve
-      tags:
-      - memberships
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
-      responses:
-        '200':
-          description: No response body
-    post:
-      operationId: memberships_create
-      tags:
-      - memberships
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
       responses:
         '200':
           description: No response body
@@ -239,103 +678,152 @@ paths:
       responses:
         '200':
           description: No response body
-  /noteapp/tasks/:
+  /noteapp/schema/:
     get:
-      operationId: tasks_list
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
       tags:
-      - tasks
+      - schema
       security:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Task'
+                type: object
+                additionalProperties: {}
           description: ''
-    post:
-      operationId: tasks_create
-      tags:
-      - tasks
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Task'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Task'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Task'
-        required: true
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Task'
-          description: ''
-  /noteapp/tasks/{id}/:
-    get:
-      operationId: tasks_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        required: true
-      tags:
-      - tasks
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
-      responses:
-        '200':
-          description: No response body
-    put:
-      operationId: tasks_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        required: true
-      tags:
-      - tasks
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
-      responses:
-        '200':
-          description: No response body
-    delete:
-      operationId: tasks_destroy
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        required: true
-      tags:
-      - tasks
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - tokenAuth: []
-      responses:
-        '204':
-          description: No response body
   /noteapp/todos/:
     get:
       operationId: todos_retrieve
@@ -345,7 +833,6 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
-      - {}
       responses:
         '200':
           description: No response body
@@ -357,7 +844,6 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
-      - {}
       responses:
         '200':
           description: No response body
@@ -376,7 +862,6 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
-      - {}
       responses:
         '200':
           description: No response body
@@ -394,7 +879,6 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
-      - {}
       responses:
         '200':
           description: No response body
@@ -412,7 +896,6 @@ paths:
       - cookieAuth: []
       - basicAuth: []
       - tokenAuth: []
-      - {}
       responses:
         '204':
           description: No response body
@@ -442,48 +925,10 @@ components:
           readOnly: true
         favorite:
           type: boolean
-        owner:
-          type: integer
       required:
       - categorize_note
       - content
       - created_at
-      - id
-      - owner
-      - title
-      - updated_at
-    Task:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        title:
-          type: string
-          maxLength: 100
-        content:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        due_date:
-          type: string
-          format: date
-        created_by:
-          type: integer
-        group:
-          type: integer
-      required:
-      - content
-      - created_at
-      - created_by
-      - due_date
-      - group
       - id
       - title
       - updated_at

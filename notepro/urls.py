@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from drf_spectacular.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +26,4 @@ urlpatterns = [
     path('noteapp/schema/',SpectacularAPIView.as_view(),name='schema'),
     path('noteapp/schema/docs/',SpectacularSwaggerView.as_view(url_name='schema')),
 ]
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
