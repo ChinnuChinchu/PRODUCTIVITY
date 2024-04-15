@@ -169,11 +169,23 @@ class NoteDetailAPIView(APIView):
 
 ######################## SEARCH ######################
     
-class NoteSearchAPIView(generics.ListAPIView):
-    queryset = Note.objects.all()
-    serializer_class = NoteSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['title']
+class NoteSearchAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        title = request.data.get('title', None)
+        if title is not None:
+            notes = Note.objects.filter(title__icontains=title)
+            todos = Todo.objects.filter(title__icontains=title)
+            note_serializer = NoteSerializer(notes, many=True)
+            todo_serializer = TodoSerializer(todos, many=True)
+            response_data = {
+                "notes": note_serializer.data,
+                "todos": todo_serializer.data
+            }
+            return Response(response_data)
+        else:
+            return Response({"error": "Title parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
     
     
 ##################### Todo ##########################    
